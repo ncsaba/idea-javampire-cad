@@ -1,19 +1,20 @@
 <idea-plugin>
-    <id>com.github.ncsaba.ideajavmpirecad</id>
-    <name>idea-javmpire-cad</name>
-    <vendor>ncsaba</vendor>
+    <id>com.javampire.cad</id>
+    <name>Javampire CAD</name>
+    <vendor>Csaba Nagy</vendor>
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.python</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.ncsaba.ideajavmpirecad.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.ncsaba.ideajavmpirecad.services.MyProjectService"/>
+        <applicationService serviceImplementation="com.javampire.cad.services.MyApplicationService"/>
+        <projectService serviceImplementation="com.javampire.cad.services.MyProjectService"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.ncsaba.ideajavmpirecad.listeners.MyProjectManagerListener"
+        <listener class="com.javampire.cad.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
 </idea-plugin>

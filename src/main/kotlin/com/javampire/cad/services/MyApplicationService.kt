@@ -1,6 +1,6 @@
-package com.github.ncsaba.ideajavmpirecad.services
+package com.javampire.cad.services
 
-import com.github.ncsaba.ideajavmpirecad.MyBundle
+import com.javampire.cad.MyBundle
 
 class MyApplicationService {
 

@@ -1,7 +1,7 @@
-package com.github.ncsaba.ideajavmpirecad.services
+package com.javampire.cad.services
 
-import com.github.ncsaba.ideajavmpirecad.MyBundle
 import com.intellij.openapi.project.Project
+import com.javampire.cad.MyBundle
 
 class MyProjectService(project: Project) {
 

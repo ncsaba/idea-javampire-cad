@@ -1,9 +1,9 @@
-package com.github.ncsaba.ideajavmpirecad.listeners
+package com.javampire.cad.listeners
 
-import com.github.ncsaba.ideajavmpirecad.services.MyProjectService
 import com.intellij.openapi.components.service
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.ProjectManagerListener
+import com.javampire.cad.services.MyProjectService
 
 internal class MyProjectManagerListener : ProjectManagerListener {
 

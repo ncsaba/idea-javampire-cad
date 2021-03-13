@@ -1,4 +1,4 @@
-package com.github.ncsaba.ideajavmpirecad
+package com.javampire.cad
 
 import com.intellij.AbstractBundle
 import org.jetbrains.annotations.NonNls
