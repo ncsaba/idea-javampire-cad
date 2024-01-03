@@ -59,7 +59,7 @@ class PartMembersProvider : PyClassMembersProviderBase() {
     }
 
     private fun computeMember(name: String, element: PsiElement, clazz: PyClassType): PyCustomMember {
-        return PyCustomMember(name, element, clazz.name)
+        return PyCustomMember(name, clazz.name) { clazz }
     }
     companion object {
         private val LOG = Logger.getInstance(PartMembersProvider::class.java.name)

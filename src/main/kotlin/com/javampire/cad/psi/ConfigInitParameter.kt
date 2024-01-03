@@ -19,7 +19,7 @@ class ConfigInitParameter(private val myMemberInfo: PartConfigMemberInfo) : PyNa
         return myMemberInfo.memberType
     }
 
-    override fun getDefaultValue(): PyExpression {
+    override fun getDefaultValue(): PyExpression? {
         return myMemberInfo.configValue
     }
 
@@ -33,7 +33,7 @@ class ConfigInitParameter(private val myMemberInfo: PartConfigMemberInfo) : PyNa
                 partConfigMemberInfo.name,
                 false,
                 false,
-                partConfigMemberInfo.configValue.text,
+                partConfigMemberInfo.configValue?.text,
                 null,
                 null,
                 null,

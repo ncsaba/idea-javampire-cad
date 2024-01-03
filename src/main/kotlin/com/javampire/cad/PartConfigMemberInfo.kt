@@ -13,7 +13,7 @@ class PartConfigMemberInfo internal constructor(
     val definitionEntry: PyExpression,
     val name: String,
     val memberType : PyType?,
-    val configValue: PyExpression
+    val configValue: PyExpression?
 ) {
     fun fillLookupElementsList(list: MutableList<LookupElement?>) {
         var propertyLookupElement: LookupElementBuilder =

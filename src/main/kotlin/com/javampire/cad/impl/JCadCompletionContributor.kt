@@ -6,6 +6,7 @@ import com.intellij.patterns.PlatformPatterns
 import com.intellij.util.ProcessingContext
 import com.javampire.cad.PartConfigInfo
 import com.javampire.cad.PartConfigInfoReader
+import com.javampire.cad.psi.AttrDictPyClass
 import com.jetbrains.python.PyTokenTypes
 import com.jetbrains.python.codeInsight.completion.getTypeEvalContext
 import com.jetbrains.python.psi.PyClass
@@ -37,8 +38,8 @@ class JCadCompletionContributor : CompletionContributor() {
                 ?: return
             val pyClass = (pyType.declarationElement as? PyClass) ?: return
             if (isPart(pyClass, typeEvalContext)) {
-                val typeInfo: PartConfigInfo = PartConfigInfoReader(pyClass).read()
-                typeInfo.getLookupElements().forEach {
+                val configInfo: PartConfigInfo = PartConfigInfoReader(pyClass).read()
+                configInfo.getLookupElements().forEach {
                     LOG.warn("Adding lookup element: $it")
                     result.addElement(PrioritizedLookupElement.withPriority(it, 10000.0))
                 }

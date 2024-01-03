@@ -32,7 +32,7 @@ class PartConfigInfoReader(
             if (name != null && value != null) {
                 val memberInfo = PartConfigMemberInfo(
                     myPyClass, entry, name,
-                    getConfigType(value, typeEvalContext),
+                    getConfigType(myPyClass, value, typeEvalContext),
                     value
                 )
                 LOG.warn("Found member info: $memberInfo")
