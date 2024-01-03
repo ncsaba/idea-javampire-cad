@@ -7,14 +7,17 @@
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.python</depends>
+    <depends>com.intellij.modules.lang</depends>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.javampire.cad.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.javampire.cad.services.MyProjectService"/>
+    <extensions defaultExtensionNs="Pythonid">
+        <pyClassMembersProvider implementation="com.javampire.cad.impl.PartMembersProvider" order="first"/>
+        <typeProvider implementation="com.javampire.cad.impl.PartTypeProvider" order="first"/>
     </extensions>
 
-    <applicationListeners>
-        <listener class="com.javampire.cad.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+    <extensions defaultExtensionNs="com.intellij">
+        <completion.contributor language="Python"
+                                implementationClass="com.javampire.cad.impl.JCadCompletionContributor"
+                                order="first"/>
+    </extensions>
+
 </idea-plugin>
